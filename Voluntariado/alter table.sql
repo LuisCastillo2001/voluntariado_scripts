@@ -1,7 +1,7 @@
 -- ==========================
 -- Script de ALTER TABLE
 -- ==========================
-
+USE VOLUNTARIADO;
 -- 1. Agregar una columna 'genero' en la tabla Estudiante
 ALTER TABLE Estudiante
 ADD genero VARCHAR(10);
@@ -40,23 +40,13 @@ RENAME COLUMN periodo_academico TO semestre;
 -- Verificación con un SELECT para comprobar el cambio de nombre
 SELECT * FROM Curso;
 
--- 6. Agregar una clave foránea en la tabla Inscripcion, referencia a una tabla Pagos (supuesta)
--- Primero agregamos la columna 'id_pago'
-ALTER TABLE Inscripcion
-ADD id_pago INT;
--- Luego agregamos la clave foránea
-ALTER TABLE Inscripcion
-ADD FOREIGN KEY (id_pago) REFERENCES Pagos(id_pago);
--- Verificación con un SELECT para ver la nueva estructura
-SELECT * FROM Inscripcion;
-
--- 7. Eliminar la clave foránea que referencia a la columna 'id_profesor' en la tabla Curso
+-- 6. Eliminar la clave foránea que referencia a la columna 'id_profesor' en la tabla Curso
 ALTER TABLE Curso
 DROP FOREIGN KEY id_profesor; 
 -- Verificación con un SELECT para comprobar que se ha eliminado la clave foránea
 SELECT * FROM Curso;
 
--- 8. Cambiar el nombre de la tabla 'Salon' a 'Aula'
+-- 7. Cambiar el nombre de la tabla 'Salon' a 'Aula'
 ALTER TABLE Salon
 RENAME TO Aula;
 -- Verificación con un SELECT para comprobar el cambio de nombre
