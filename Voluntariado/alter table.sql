@@ -40,13 +40,7 @@ RENAME COLUMN periodo_academico TO semestre;
 -- Verificación con un SELECT para comprobar el cambio de nombre
 SELECT * FROM Curso;
 
--- 6. Eliminar la clave foránea que referencia a la columna 'id_profesor' en la tabla Curso
-ALTER TABLE Curso
-DROP FOREIGN KEY id_profesor; 
--- Verificación con un SELECT para comprobar que se ha eliminado la clave foránea
-SELECT * FROM Curso;
-
--- 7. Cambiar el nombre de la tabla 'Salon' a 'Aula'
+-- 6. Cambiar el nombre de la tabla 'Salon' a 'Aula'
 ALTER TABLE Salon
 RENAME TO Aula;
 -- Verificación con un SELECT para comprobar el cambio de nombre
